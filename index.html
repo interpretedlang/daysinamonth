@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<input type="number" placeholder="Nhập tháng" min="1" max="12" style="width: 150px;" /> <!-- thêm width để làm giống như trong hình ảnh -->
+		<button onclick="calculateDaysInAMonth()">Tính số ngày</button>
+		<br />
+		<p></p>
+		<script>
+			function calculateDaysInAMonth() {
+				const month = parseInt(document.querySelector("input").value);
+				let days;
+
+				switch (month) {
+					case 1:
+					case 3:
+					case 5:
+					case 7:
+					case 8:
+					case 10:
+					case 12:
+						days = 31;
+						break;
+					case 4:
+					case 6:
+					case 9:
+					case 11:
+						days = 30;
+						break;
+					case 2:
+						days = "28 hoặc 29";
+						break;
+				}
+
+				document.querySelector("p").textContent =
+					`Tháng ${month} có ${days} ngày`;
+			}
+		</script>
+	</body>
+</html>
